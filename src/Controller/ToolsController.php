@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use Cake\Core\Configure;
+use Cake\Network\Http\Client;
 
 class ToolsController extends AppController
 {
@@ -53,6 +54,18 @@ class ToolsController extends AppController
 
 
         pr($title);
+        die();
+    }
+
+    public function getCategories() {
+        $http = new Client();
+        $response = $http->get('http://www.ang.pl/slownictwo/tematyczne');
+        preg_match_all('/<h2><a href="([a-z0-9\/-]+)">([a-żA-Ż0-9\(\),\- ]*)<\/a><\/h2>/', $response->body(), $result);
+
+        foreach ($result[1] as $key => $item) {
+            pr($result[1][$key] . ' - ' . $result[2][$key]);
+        }
+
         die();
     }
 }
