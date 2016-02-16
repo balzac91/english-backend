@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use Cake\Core\Configure;
 use Cake\Network\Http\Client;
+use Cake\ORM\TableRegistry;
 
 class ToolsController extends AppController
 {
@@ -58,14 +59,18 @@ class ToolsController extends AppController
     }
 
     public function getCategories() {
+        $this->autoRender = false;
+
         $http = new Client();
         $response = $http->get('http://www.ang.pl/slownictwo/tematyczne');
         preg_match_all('/<h2><a href="([a-z0-9\/-]+)">([a-żA-Ż0-9\(\),\- ]*)<\/a><\/h2>/', $response->body(), $result);
 
+        $categoriesTable = TableRegistry::get('Categories');
         foreach ($result[1] as $key => $item) {
-            pr($result[1][$key] . ' - ' . $result[2][$key]);
+            $category = $categoriesTable->newEntity();
+            $category->name = $result[2][$key];
+            $category->url = $result[1][$key];
+            $categoriesTable->save($category);
         }
-
-        die();
     }
 }
