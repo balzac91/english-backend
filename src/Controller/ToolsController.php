@@ -9,6 +9,7 @@ class ToolsController extends AppController
 {
     public function getCategories()
     {
+        die();
         set_time_limit(0);
         $this->autoRender = false;
 
@@ -27,6 +28,7 @@ class ToolsController extends AppController
 
     public function getWords()
     {
+        die();
         set_time_limit(0);
         $this->autoRender = false;
 
@@ -86,5 +88,23 @@ class ToolsController extends AppController
                 }
             }
         }
+    }
+
+    public function testWords() {
+        $wordsTable = TableRegistry::get('Words');
+        $words = $wordsTable->find()
+            ->where(['category_id' => 8])
+            ->order('RAND()')
+            ->limit(10);
+
+        $wordsData = array();
+        foreach ($words as $word) {
+            $wordsData[] = array(
+                'polish' => $word->polish,
+                'english' => $word->english
+            );
+        }
+
+        $this->set('wordsData', $wordsData);
     }
 }
