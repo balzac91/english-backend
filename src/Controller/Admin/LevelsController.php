@@ -2,6 +2,7 @@
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Levels Controller
@@ -10,6 +11,13 @@ use App\Controller\AppController;
  */
 class LevelsController extends AppController
 {
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+
+        $adminMenu['levels'] = true;
+        $this->set('adminMenu', $adminMenu);
+    }
 
     /**
      * Index method
@@ -34,7 +42,7 @@ class LevelsController extends AppController
     public function view($id = null)
     {
         $level = $this->Levels->get($id, [
-            'contain' => ['Words']
+            'contain' => ['Testtables', 'Words']
         ]);
 
         $this->set('level', $level);

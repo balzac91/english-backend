@@ -8,6 +8,7 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $name
+ * @property \App\Model\Entity\Testtable[] $testtables
  * @property \App\Model\Entity\Word[] $words
  */
 class Level extends Entity

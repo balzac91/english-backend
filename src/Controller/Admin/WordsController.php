@@ -2,6 +2,7 @@
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Words Controller
@@ -10,6 +11,13 @@ use App\Controller\AppController;
  */
 class WordsController extends AppController
 {
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+
+        $adminMenu['words'] = true;
+        $this->set('adminMenu', $adminMenu);
+    }
 
     /**
      * Index method
@@ -37,7 +45,7 @@ class WordsController extends AppController
     public function view($id = null)
     {
         $word = $this->Words->get($id, [
-            'contain' => ['Categories', 'Levels']
+            'contain' => ['Categories', 'Levels', 'Testtables']
         ]);
 
         $this->set('word', $word);

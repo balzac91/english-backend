@@ -9,6 +9,7 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $name
  * @property string $url
+ * @property \App\Model\Entity\Testtable[] $testtables
  * @property \App\Model\Entity\Word[] $words
  */
 class Category extends Entity

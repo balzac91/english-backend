@@ -26,6 +26,7 @@ class WordsTableTest extends TestCase
     public $fixtures = [
         'app.words',
         'app.categories',
+        'app.testtables',
         'app.levels'
     ];
 

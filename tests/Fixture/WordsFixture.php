@@ -46,8 +46,8 @@ class WordsFixture extends TestFixture
             'level_id' => 1,
             'polish' => 'Lorem ipsum dolor sit amet',
             'english' => 'Lorem ipsum dolor sit amet',
-            'created' => '2016-02-17 12:37:06',
-            'modified' => '2016-02-17 12:37:06'
+            'created' => '2016-02-20 20:21:55',
+            'modified' => '2016-02-20 20:21:55'
         ],
     ];
 }

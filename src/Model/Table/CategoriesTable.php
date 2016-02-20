@@ -10,6 +10,7 @@ use Cake\Validation\Validator;
 /**
  * Categories Model
  *
+ * @property \Cake\ORM\Association\HasMany $Testtables
  * @property \Cake\ORM\Association\HasMany $Words
  */
 class CategoriesTable extends Table
@@ -29,6 +30,9 @@ class CategoriesTable extends Table
         $this->displayField('name');
         $this->primaryKey('id');
 
+        $this->hasMany('Testtables', [
+            'foreignKey' => 'category_id'
+        ]);
         $this->hasMany('Words', [
             'foreignKey' => 'category_id'
         ]);

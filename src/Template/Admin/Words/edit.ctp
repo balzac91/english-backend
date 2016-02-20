@@ -1,30 +1,58 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $word->id],
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="box box-primary">
+            <div class="box-header">
+                <h3 class="box-title"><?= __('Edit Word') ?></h3>
+
+                <div class="pull-right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            <?= __('Actions'); ?>&nbsp;
+                            <span class="fa fa-caret-down"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><?= $this->Form->postLink(
+                                    __('Delete'),
+                                    ['action' => 'delete', $word->id],
                 ['confirm' => __('Are you sure you want to delete # {0}?', $word->id)]
-            )
+            );
         ?></li>
-        <li><?= $this->Html->link(__('List Words'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Categories'), ['controller' => 'Categories', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Category'), ['controller' => 'Categories', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Levels'), ['controller' => 'Levels', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Level'), ['controller' => 'Levels', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="words form large-9 medium-8 columns content">
-    <?= $this->Form->create($word) ?>
-    <fieldset>
-        <legend><?= __('Edit Word') ?></legend>
-        <?php
-            echo $this->Form->input('category_id', ['options' => $categories]);
-            echo $this->Form->input('level_id', ['options' => $levels, 'empty' => true]);
-            echo $this->Form->input('polish');
-            echo $this->Form->input('english');
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
+                            <li><?= $this->Html->link(__('List Words'), ['action' => 'index']); ?></li>
+                            <li><?= $this->Html->link(__('List Categories'), ['controller' => 'Categories', 'action' => 'index']); ?></li>
+                            <li><?= $this->Html->link(__('New Category'), ['controller' => 'Categories', 'action' => 'add']); ?></li>
+                            <li><?= $this->Html->link(__('List Levels'), ['controller' => 'Levels', 'action' => 'index']); ?></li>
+                            <li><?= $this->Html->link(__('New Level'), ['controller' => 'Levels', 'action' => 'add']); ?></li>
+                            <li><?= $this->Html->link(__('List Testtables'), ['controller' => 'Testtables', 'action' => 'index']); ?></li>
+                            <li><?= $this->Html->link(__('New Testtable'), ['controller' => 'Testtables', 'action' => 'add']); ?></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="box-body">
+                <?= $this->Form->create($word); ?>
+
+                <div class="form-group">
+                    <?= $this->Form->input('category_id', ['options' => $categories, 'class' => 'form-control']); ?>
+                </div>
+
+
+                <div class="form-group">
+                    <?= $this->Form->input('level_id', ['options' => $levels, 'empty' => true, 'class' => 'form-control']); ?>
+                </div>
+
+                <div class="form-group">
+                    <?= $this->Form->input('polish', ['class' => 'form-control']); ?>
+                </div>
+
+                <div class="form-group">
+                    <?= $this->Form->input('english', ['class' => 'form-control']); ?>
+                </div>
+
+                <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-primary pull-right']); ?>
+                <?= $this->Form->end(); ?>
+            </div>
+        </div>
+    </div>
 </div>

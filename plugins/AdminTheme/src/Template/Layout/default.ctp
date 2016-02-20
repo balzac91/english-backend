@@ -23,7 +23,6 @@
     <title>
         <?= $this->fetch('title'); ?>
     </title>
-    <?= $this->Html->meta('icon'); ?>
     <?= $this->fetch('meta'); ?>
     <?= $this->Html->css('bootstrap/bootstrap.min'); ?>
     <?= $this->Html->css('bootstrap-datetimepicker/bootstrap-datetimepicker.min'); ?>

@@ -2,6 +2,7 @@
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Categories Controller
@@ -10,6 +11,13 @@ use App\Controller\AppController;
  */
 class CategoriesController extends AppController
 {
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+
+        $adminMenu['categories'] = true;
+        $this->set('adminMenu', $adminMenu);
+    }
 
     /**
      * Index method
@@ -34,7 +42,7 @@ class CategoriesController extends AppController
     public function view($id = null)
     {
         $category = $this->Categories->get($id, [
-            'contain' => ['Words']
+            'contain' => ['Testtables', 'Words']
         ]);
 
         $this->set('category', $category);
