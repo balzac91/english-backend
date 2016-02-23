@@ -17,19 +17,19 @@
                 <?= $this->Html->link(__('General') . '<i class="fa fa-angle-left pull-right"></i>', array('#'), array('escape' => false)); ?>
                 <ul class="treeview-menu">
                     <li class="<?= (isset($adminMenu['levels'])) ? 'active' : ''; ?>">
-                        <?= $this->Html->link(__('Levels'), array('plugin' => false, 'controller' => 'Levels', 'action' => 'index')); ?>
+                        <?= $this->Html->link(__('Levels'), array('plugin' => false, 'controller' => 'Levels', 'action' => 'index', 'prefix' => 'admin')); ?>
                     </li>
                     <li class="<?= (isset($adminMenu['categories'])) ? 'active' : ''; ?>">
-                        <?= $this->Html->link(__('Categories'), array('plugin' => false, 'controller' => 'Categories', 'action' => 'index')); ?>
+                        <?= $this->Html->link(__('Categories'), array('plugin' => false, 'controller' => 'Categories', 'action' => 'index', 'prefix' => 'admin')); ?>
                     </li>
                     <li class="<?= (isset($adminMenu['words'])) ? 'active' : ''; ?>">
-                        <?= $this->Html->link(__('Words'), array('plugin' => false, 'controller' => 'Words', 'action' => 'index')); ?>
+                        <?= $this->Html->link(__('Words'), array('plugin' => false, 'controller' => 'Words', 'action' => 'index', 'prefix' => 'admin')); ?>
                     </li>
                     <li class="<?= (isset($adminMenu['roles'])) ? 'active' : ''; ?>">
-                        <?= $this->Html->link(__('Roles'), array('plugin' => false, 'controller' => 'Roles', 'action' => 'index')); ?>
+                        <?= $this->Html->link(__('Roles'), array('plugin' => false, 'controller' => 'Roles', 'action' => 'index', 'prefix' => 'admin')); ?>
                     </li>
                     <li class="<?= (isset($adminMenu['users'])) ? 'active' : ''; ?>">
-                        <?= $this->Html->link(__('Users'), array('plugin' => false, 'controller' => 'Users', 'action' => 'index')); ?>
+                        <?= $this->Html->link(__('Users'), array('plugin' => false, 'controller' => 'Users', 'action' => 'index', 'prefix' => 'admin')); ?>
                     </li>
                 </ul>
             </li>
