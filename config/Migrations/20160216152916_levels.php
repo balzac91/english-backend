@@ -28,7 +28,6 @@ class Levels extends AbstractMigration
 
     public function up()
     {
-
         $levels = $this->table('levels');
         $levels->insert(array(
             array('id' => null, 'name' => 'a1'),

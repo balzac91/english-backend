@@ -25,6 +25,9 @@
                     <li class="<?= (isset($adminMenu['words'])) ? 'active' : ''; ?>">
                         <?= $this->Html->link(__('Words'), array('plugin' => false, 'controller' => 'Words', 'action' => 'index')); ?>
                     </li>
+                    <li class="<?= (isset($adminMenu['roles'])) ? 'active' : ''; ?>">
+                        <?= $this->Html->link(__('Roles'), array('plugin' => false, 'controller' => 'Roles', 'action' => 'index')); ?>
+                    </li>
                 </ul>
             </li>
         </ul>
