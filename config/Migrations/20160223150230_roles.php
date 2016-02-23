@@ -27,8 +27,8 @@ class Roles extends AbstractMigration
      */
     public function change()
     {
-        $categories = $this->table('roles');
-        $categories->addColumn('name', 'string', array('limit' => 255))
+        $roles = $this->table('roles');
+        $roles->addColumn('name', 'string', array('limit' => 255))
             ->create();
     }
 }

@@ -32,12 +32,12 @@ class InitialSchema extends AbstractMigration
             ->addColumn('url', 'string', array('limit' => 255))
             ->create();
 
-        $categories = $this->table('levels');
-        $categories->addColumn('name', 'string', array('limit' => 255))
+        $levels = $this->table('levels');
+        $levels->addColumn('name', 'string', array('limit' => 255))
             ->create();
 
-        $categories = $this->table('words');
-        $categories->addColumn('category_id', 'integer')
+        $words = $this->table('words');
+        $words->addColumn('category_id', 'integer')
             ->addColumn('level_id', 'integer', array('null' => true))
             ->addColumn('polish', 'string', array('limit' => 255))
             ->addColumn('english', 'string', array('limit' => 255))

@@ -2,7 +2,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class FillRoles extends AbstractMigration
+class Users extends AbstractMigration
 {
     /**
      * Change Method.
@@ -25,18 +25,15 @@ class FillRoles extends AbstractMigration
      * Remember to call "create()" or "update()" and NOT "save()" when working
      * with the Table class.
      */
-    public function up()
+    public function change()
     {
-        $roles = $this->table('roles');
-        $roles->insert(array(
-            array('id' => null, 'name' => 'Admin'),
-            array('id' => null, 'name' => 'User')
-        ));
-        $roles->saveData();
-    }
-
-    public function down()
-    {
-        $this->execute('TRUNCATE roles');
+        $users = $this->table('users');
+        $users->addColumn('role_id', 'integer')
+            ->addColumn('login', 'string', array('limit' => 255))
+            ->addColumn('email', 'string', array('limit' => 255))
+            ->addColumn('password', 'string', array('limit' => 255))
+            ->addColumn('created', 'datetime')
+            ->addColumn('modified', 'datetime')
+            ->create();
     }
 }
