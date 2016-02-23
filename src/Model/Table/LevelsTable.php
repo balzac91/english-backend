@@ -10,7 +10,6 @@ use Cake\Validation\Validator;
 /**
  * Levels Model
  *
- * @property \Cake\ORM\Association\HasMany $Testtables
  * @property \Cake\ORM\Association\HasMany $Words
  */
 class LevelsTable extends Table
@@ -30,9 +29,6 @@ class LevelsTable extends Table
         $this->displayField('name');
         $this->primaryKey('id');
 
-        $this->hasMany('Testtables', [
-            'foreignKey' => 'level_id'
-        ]);
         $this->hasMany('Words', [
             'foreignKey' => 'level_id'
         ]);

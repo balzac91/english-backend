@@ -10,6 +10,7 @@ use Cake\Validation\Validator;
 /**
  * Roles Model
  *
+ * @property \Cake\ORM\Association\HasMany $Users
  */
 class RolesTable extends Table
 {
@@ -27,6 +28,10 @@ class RolesTable extends Table
         $this->table('roles');
         $this->displayField('name');
         $this->primaryKey('id');
+
+        $this->hasMany('Users', [
+            'foreignKey' => 'role_id'
+        ]);
     }
 
     /**

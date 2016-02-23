@@ -42,7 +42,7 @@ class LevelsController extends AppController
     public function view($id = null)
     {
         $level = $this->Levels->get($id, [
-            'contain' => ['Testtables', 'Words']
+            'contain' => ['Words']
         ]);
 
         $this->set('level', $level);

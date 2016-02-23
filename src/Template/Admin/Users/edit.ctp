@@ -11,12 +11,9 @@
                             <span class="fa fa-caret-down"></span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-right">
-                            <li><?= $this->Form->postLink(
-                                    __('Delete'),
+                            <li><?= $this->Form->postLink(__('Delete'),
                                     ['action' => 'delete', $user->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]
-            );
-        ?></li>
+                                    ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]); ?></li>
                             <li><?= $this->Html->link(__('List Users'), ['action' => 'index']); ?></li>
                             <li><?= $this->Html->link(__('List Roles'), ['controller' => 'Roles', 'action' => 'index']); ?></li>
                             <li><?= $this->Html->link(__('New Role'), ['controller' => 'Roles', 'action' => 'add']); ?></li>
