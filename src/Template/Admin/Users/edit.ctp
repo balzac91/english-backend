@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="form-group">
-                    <?= $this->Form->input('password', ['class' => 'form-control']); ?>
+                    <?= $this->Form->input('password_temp', ['type' => 'password', 'class' => 'form-control', 'label' => __('Password')]); ?>
                 </div>
 
                 <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-primary pull-right']); ?>
