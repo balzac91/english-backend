@@ -16,6 +16,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use App\Model\Entity\Role;
 
 /**
  * Application Controller
@@ -44,6 +45,7 @@ class AppController extends Controller
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
+            'authorize' => 'Controller',
             'authenticate' => [
                 'Form' => [
                     'fields' => [
@@ -58,9 +60,9 @@ class AppController extends Controller
                 'prefix' => false
             ],
             'loginRedirect' => [
-                'controller' => 'Users',
-                'action' => 'index',
-                'prefix' => 'admin'
+                'controller' => 'Login',
+                'action' => 'login',
+                'prefix' => false
             ],
             'logoutRedirect' => [
                 'controller' => 'Login',
@@ -85,5 +87,14 @@ class AppController extends Controller
         }
 
         $this->viewBuilder()->theme('AdminTheme');
+    }
+
+    public function isAuthorized($user)
+    {
+        if ($this->request->params['prefix'] === 'admin' && $user['role_id'] === Role::$ADMIN) {
+            return true;
+        }
+
+        return false;
     }
 }
