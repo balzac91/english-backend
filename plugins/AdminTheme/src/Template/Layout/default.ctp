@@ -30,6 +30,7 @@
     <?= $this->Html->css('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'); ?>
     <?= $this->Html->css('AdminLTE'); ?>
     <?= $this->Html->css('skins/_all-skins.min'); ?>
+    <?= $this->Html->css('style'); ?>
     <?= $this->Html->script('jQuery/jQuery-2.1.4.min'); ?>
     <?= $this->Html->script('bootstrap/bootstrap.min'); ?>
     <?= $this->Html->script('momentjs/moment-with-locales.min'); ?>

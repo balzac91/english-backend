@@ -72,6 +72,18 @@ class AppController extends Controller
         ]);
     }
 
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+
+        $loggedUser = array();
+        if ($this->Auth->user()) {
+            $loggedUser = $this->Auth->user();
+        }
+
+        $this->set('loggedUser', $loggedUser);
+    }
+
     /**
      * Before render callback.
      *
