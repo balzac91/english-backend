@@ -13,8 +13,8 @@ class DashboardController extends AppController
     {
         parent::beforeFilter($event);
 
-        $adminMenu['dashboard'] = true;
-        $this->set('adminMenu', $adminMenu);
+        $adminDashboard = true;
+        $this->set('adminDashboard', $adminDashboard);
     }
 
     /**

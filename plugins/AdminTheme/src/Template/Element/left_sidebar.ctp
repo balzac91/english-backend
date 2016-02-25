@@ -1,38 +1,30 @@
 <aside class="main-sidebar">
     <section class="sidebar">
-        <div class="user-panel">
-            <div class="pull-left image">
-                <?= $this->Html->image('user2-160x160.jpg', array('class' => 'img-circle', 'alt' => 'User Image')); ?>
-            </div>
-            <div class="pull-left info">
-                <p>Alexander Pierce</p>
-                <?= $this->Html->link('<i class="fa fa-circle text-success"></i> Online', array('#'), array('escape' => false)); ?>
-            </div>
-        </div>
-
         <ul class="sidebar-menu">
             <li class="header"><?= __('MAIN NAVIGATION'); ?></li>
 
+            <li class="<?= (isset($adminDashboard)) ? 'active' : ''; ?>">
+                <?= $this->Html->link(__('<i class="fa fa-dashboard"></i> <span>Dashboard</span>'), ['plugin' => false, 'controller' => 'Dashboard', 'action' => 'index', 'prefix' => 'admin'], ['escape' => false]); ?>
+            </li>
+
             <li class="treeview <?= (isset($adminMenu)) ? 'active' : ''; ?>">
-                <?= $this->Html->link(__('General') . '<i class="fa fa-angle-left pull-right"></i>', array('#'), array('escape' => false)); ?>
+                <?= $this->Html->link(__('<i class="fa fa-cogs"></i> <span>General</span>') . '<i class="fa fa-angle-left pull-right"></i>', ['#'], ['escape' => false]); ?>
                 <ul class="treeview-menu">
-                    <li class="<?= (isset($adminMenu['dashboard'])) ? 'active' : ''; ?>">
-                        <?= $this->Html->link(__('Dashboard'), array('plugin' => false, 'controller' => 'Dashboard', 'action' => 'index', 'prefix' => 'admin')); ?>
-                    </li>
+
                     <li class="<?= (isset($adminMenu['levels'])) ? 'active' : ''; ?>">
-                        <?= $this->Html->link(__('Levels'), array('plugin' => false, 'controller' => 'Levels', 'action' => 'index', 'prefix' => 'admin')); ?>
+                        <?= $this->Html->link(__('<span>Levels</span>'), ['plugin' => false, 'controller' => 'Levels', 'action' => 'index', 'prefix' => 'admin'], ['escape' => false]); ?>
                     </li>
                     <li class="<?= (isset($adminMenu['categories'])) ? 'active' : ''; ?>">
-                        <?= $this->Html->link(__('Categories'), array('plugin' => false, 'controller' => 'Categories', 'action' => 'index', 'prefix' => 'admin')); ?>
+                        <?= $this->Html->link(__('<span>Categories</span>'), ['plugin' => false, 'controller' => 'Categories', 'action' => 'index', 'prefix' => 'admin'], ['escape' => false]); ?>
                     </li>
                     <li class="<?= (isset($adminMenu['words'])) ? 'active' : ''; ?>">
-                        <?= $this->Html->link(__('Words'), array('plugin' => false, 'controller' => 'Words', 'action' => 'index', 'prefix' => 'admin')); ?>
+                        <?= $this->Html->link(__('<span>Words</span>'), ['plugin' => false, 'controller' => 'Words', 'action' => 'index', 'prefix' => 'admin'], ['escape' => false]); ?>
                     </li>
                     <li class="<?= (isset($adminMenu['roles'])) ? 'active' : ''; ?>">
-                        <?= $this->Html->link(__('Roles'), array('plugin' => false, 'controller' => 'Roles', 'action' => 'index', 'prefix' => 'admin')); ?>
+                        <?= $this->Html->link(__('<span>Roles</span>'), ['plugin' => false, 'controller' => 'Roles', 'action' => 'index', 'prefix' => 'admin'], ['escape' => false]); ?>
                     </li>
                     <li class="<?= (isset($adminMenu['users'])) ? 'active' : ''; ?>">
-                        <?= $this->Html->link(__('Users'), array('plugin' => false, 'controller' => 'Users', 'action' => 'index', 'prefix' => 'admin')); ?>
+                        <?= $this->Html->link(__('<span>Users</span>'), ['plugin' => false, 'controller' => 'Users', 'action' => 'index', 'prefix' => 'admin'], ['escape' => false]); ?>
                     </li>
                 </ul>
             </li>
