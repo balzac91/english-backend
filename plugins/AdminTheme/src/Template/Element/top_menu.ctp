@@ -22,7 +22,7 @@
 
                             <p>
                                 <?= $loggedUser['login']; ?>
-                                <small><?= __('Member since'); ?> <?= $this->Time->format($loggedUser['created'], \IntlDateFormatter::MEDIUM); ?></small>
+                                <small><?= __('Member since'); ?> <?= $this->Time->format($loggedUser['created'], \IntlDateFormatter::SHORT); ?></small>
                             </p>
                         </li>
                         <li class="user-footer">
