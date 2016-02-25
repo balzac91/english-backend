@@ -15,7 +15,6 @@ use Cake\ORM\Entity;
  * @property string $english
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
- * @property \App\Model\Entity\Testtable[] $testtables
  */
 class Word extends Entity
 {

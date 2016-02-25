@@ -45,7 +45,7 @@ class WordsController extends AppController
     public function view($id = null)
     {
         $word = $this->Words->get($id, [
-            'contain' => ['Categories', 'Levels', 'Testtables']
+            'contain' => ['Categories', 'Levels']
         ]);
 
         $this->set('word', $word);
