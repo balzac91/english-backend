@@ -22,9 +22,9 @@ class LoginController extends AppController
             if ($user) {
                 if ($user['role_id'] === Role::$ADMIN) {
                     $this->Auth->config('loginRedirect', [
-                        'controller' => 'Users',
-                        'action' => 'add',
-                        'prefix' => 'index'
+                        'controller' => 'Dashboard',
+                        'action' => 'index',
+                        'prefix' => 'admin'
                     ]);
                 }
 

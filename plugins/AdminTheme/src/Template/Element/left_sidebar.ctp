@@ -16,6 +16,9 @@
             <li class="treeview <?= (isset($adminMenu)) ? 'active' : ''; ?>">
                 <?= $this->Html->link(__('General') . '<i class="fa fa-angle-left pull-right"></i>', array('#'), array('escape' => false)); ?>
                 <ul class="treeview-menu">
+                    <li class="<?= (isset($adminMenu['dashboard'])) ? 'active' : ''; ?>">
+                        <?= $this->Html->link(__('Dashboard'), array('plugin' => false, 'controller' => 'Dashboard', 'action' => 'index', 'prefix' => 'admin')); ?>
+                    </li>
                     <li class="<?= (isset($adminMenu['levels'])) ? 'active' : ''; ?>">
                         <?= $this->Html->link(__('Levels'), array('plugin' => false, 'controller' => 'Levels', 'action' => 'index', 'prefix' => 'admin')); ?>
                     </li>
