@@ -24,7 +24,7 @@ class LoginController extends AppController
                     $this->Auth->config('loginRedirect', [
                         'controller' => 'Users',
                         'action' => 'add',
-                        'prefix' => 'admin'
+                        'prefix' => 'index'
                     ]);
                 }
 
