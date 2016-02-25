@@ -12,6 +12,7 @@ class LoginController extends AppController
         parent::beforeFilter($event);
 
         $this->Auth->allow(['logout']);
+        $this->viewBuilder()->layout('login');
     }
 
     public function login()
@@ -31,9 +32,9 @@ class LoginController extends AppController
                 $this->Flash->success(__('You are now logged in.'));
                 return $this->redirect($this->Auth->redirectUrl());
             }
-        }
 
-        $this->Flash->error(__('Your e-mail or password is incorrect.'));
+            $this->Flash->error(__('Your e-mail or password is incorrect.'));
+        }
     }
 
     public function logout()
