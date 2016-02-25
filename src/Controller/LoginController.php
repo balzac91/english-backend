@@ -19,15 +19,7 @@ class LoginController extends AppController
     {
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
-            if ($user) {
-                if ($user['role_id'] === Role::$ADMIN) {
-                    $this->Auth->config('loginRedirect', [
-                        'controller' => 'Dashboard',
-                        'action' => 'index',
-                        'prefix' => 'admin'
-                    ]);
-                }
-
+            if ($user && $user['role_id'] === Role::$ADMIN) {
                 $this->Auth->setUser($user);
                 $this->Flash->success(__('You are now logged in.'));
                 return $this->redirect($this->Auth->redirectUrl());
