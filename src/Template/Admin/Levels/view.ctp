@@ -33,7 +33,6 @@
                         <td><?= h($level->name); ?></td>
                     </tr>
                 </table>
-
             </div>
         </div>
     </div>

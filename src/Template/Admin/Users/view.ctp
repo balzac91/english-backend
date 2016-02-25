@@ -53,7 +53,6 @@
                         <td><?= h($user->modified); ?></td>
                     </tr>
                 </table>
-
             </div>
         </div>
     </div>

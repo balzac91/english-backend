@@ -37,7 +37,6 @@
                         <td><?= h($category->url); ?></td>
                     </tr>
                 </table>
-
             </div>
         </div>
     </div>

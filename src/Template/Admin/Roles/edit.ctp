@@ -15,11 +15,12 @@
                                     ['action' => 'delete', $role->id],
                                     ['confirm' => __('Are you sure you want to delete # {0}?', $role->id)]); ?></li>
                             <li><?= $this->Html->link(__('List Roles'), ['action' => 'index']); ?></li>
+                            <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']); ?></li>
+                            <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']); ?></li>
                         </ul>
                     </div>
                 </div>
             </div>
-
 
             <div class="box-body">
                 <?= $this->Form->create($role); ?>

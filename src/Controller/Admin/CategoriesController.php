@@ -42,7 +42,7 @@ class CategoriesController extends AppController
     public function view($id = null)
     {
         $category = $this->Categories->get($id, [
-            'contain' => ['Testtables', 'Words']
+            'contain' => ['Words']
         ]);
 
         $this->set('category', $category);

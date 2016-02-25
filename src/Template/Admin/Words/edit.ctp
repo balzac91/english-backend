@@ -11,32 +11,24 @@
                             <span class="fa fa-caret-down"></span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-right">
-                            <li><?= $this->Form->postLink(
-                                    __('Delete'),
+                            <li><?= $this->Form->postLink(__('Delete'),
                                     ['action' => 'delete', $word->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $word->id)]
-            );
-        ?></li>
+                                    ['confirm' => __('Are you sure you want to delete # {0}?', $word->id)]); ?></li>
                             <li><?= $this->Html->link(__('List Words'), ['action' => 'index']); ?></li>
                             <li><?= $this->Html->link(__('List Categories'), ['controller' => 'Categories', 'action' => 'index']); ?></li>
                             <li><?= $this->Html->link(__('New Category'), ['controller' => 'Categories', 'action' => 'add']); ?></li>
                             <li><?= $this->Html->link(__('List Levels'), ['controller' => 'Levels', 'action' => 'index']); ?></li>
                             <li><?= $this->Html->link(__('New Level'), ['controller' => 'Levels', 'action' => 'add']); ?></li>
-                            <li><?= $this->Html->link(__('List Testtables'), ['controller' => 'Testtables', 'action' => 'index']); ?></li>
-                            <li><?= $this->Html->link(__('New Testtable'), ['controller' => 'Testtables', 'action' => 'add']); ?></li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-
             <div class="box-body">
                 <?= $this->Form->create($word); ?>
-
                 <div class="form-group">
                     <?= $this->Form->input('category_id', ['options' => $categories, 'class' => 'form-control']); ?>
                 </div>
-
 
                 <div class="form-group">
                     <?= $this->Form->input('level_id', ['options' => $levels, 'empty' => true, 'class' => 'form-control']); ?>

@@ -19,8 +19,6 @@
                             <li><?= $this->Html->link(__('New Category'), ['controller' => 'Categories', 'action' => 'add']); ?></li>
                             <li><?= $this->Html->link(__('List Levels'), ['controller' => 'Levels', 'action' => 'index']); ?></li>
                             <li><?= $this->Html->link(__('New Level'), ['controller' => 'Levels', 'action' => 'add']); ?></li>
-                            <li><?= $this->Html->link(__('List Testtables'), ['controller' => 'Testtables', 'action' => 'index']); ?></li>
-                            <li><?= $this->Html->link(__('New Testtable'), ['controller' => 'Testtables', 'action' => 'add']); ?></li>
                         </ul>
                     </div>
                 </div>
@@ -57,7 +55,6 @@
                         <td><?= h($word->modified); ?></td>
                     </tr>
                 </table>
-
             </div>
         </div>
     </div>

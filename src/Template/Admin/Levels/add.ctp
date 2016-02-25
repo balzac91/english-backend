@@ -19,7 +19,6 @@
                 </div>
             </div>
 
-
             <div class="box-body">
                 <?= $this->Form->create($level); ?>
                 <div class="form-group">

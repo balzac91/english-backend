@@ -42,7 +42,7 @@ class RolesController extends AppController
     public function view($id = null)
     {
         $role = $this->Roles->get($id, [
-            'contain' => []
+            'contain' => ['Users']
         ]);
 
         $this->set('role', $role);

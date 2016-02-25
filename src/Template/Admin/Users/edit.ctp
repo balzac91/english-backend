@@ -22,10 +22,8 @@
                 </div>
             </div>
 
-
             <div class="box-body">
                 <?= $this->Form->create($user); ?>
-
                 <div class="form-group">
                     <?= $this->Form->input('role_id', ['options' => $roles, 'class' => 'form-control']); ?>
                 </div>

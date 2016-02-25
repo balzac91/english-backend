@@ -12,7 +12,6 @@ use Cake\Validation\Validator;
  *
  * @property \Cake\ORM\Association\BelongsTo $Categories
  * @property \Cake\ORM\Association\BelongsTo $Levels
- * @property \Cake\ORM\Association\HasMany $Testtables
  */
 class WordsTable extends Table
 {
@@ -39,9 +38,6 @@ class WordsTable extends Table
         ]);
         $this->belongsTo('Levels', [
             'foreignKey' => 'level_id'
-        ]);
-        $this->hasMany('Testtables', [
-            'foreignKey' => 'word_id'
         ]);
     }
 

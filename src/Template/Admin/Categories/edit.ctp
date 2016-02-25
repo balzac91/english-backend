@@ -22,7 +22,6 @@
                 </div>
             </div>
 
-
             <div class="box-body">
                 <?= $this->Form->create($category); ?>
                 <div class="form-group">

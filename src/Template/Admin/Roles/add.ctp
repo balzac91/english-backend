@@ -12,11 +12,12 @@
                         </button>
                         <ul class="dropdown-menu dropdown-menu-right">
                             <li><?= $this->Html->link(__('List Roles'), ['action' => 'index']); ?></li>
+                            <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']); ?></li>
+                            <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']); ?></li>
                         </ul>
                     </div>
                 </div>
             </div>
-
 
             <div class="box-body">
                 <?= $this->Form->create($role); ?>
