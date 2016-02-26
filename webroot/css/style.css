@@ -1,9 +1,13 @@
 .small-user-icon {
-    color: white;
+    color: #fff;
     font-size: 18px;
 }
 
 .large-user-icon {
-    color: white;
+    color: #fff;
     font-size: 85px;
+}
+
+.dashboard-panel-link {
+    color: #000;
 }
