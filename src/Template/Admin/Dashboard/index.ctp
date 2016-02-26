@@ -35,3 +35,17 @@
         </a>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-md-4 col-sm-6 col-xs-12">
+        <a href="<?= $this->Url->build(['plugin' => false, 'controller' => 'ProposedTranslations', 'action' => 'index', 'prefix' => 'admin']); ?>" class="dashboard-panel-link">
+            <div class="info-box">
+                <span class="info-box-icon bg-blue"><i class="fa fa-book"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text"><?= __('Proposed Translations'); ?></span>
+                    <span class="info-box-number"><?= $this->Number->format($proposedTranslationsNumber); ?></span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

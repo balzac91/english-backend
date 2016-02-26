@@ -35,6 +35,9 @@ class DashboardController extends AppController
         $words = TableRegistry::get('Words');
         $wordsNumber = $words->find()->count();
 
-        $this->set(compact('categoriesNumber', 'levelsNumber', 'wordsNumber'));
+        $proposedTranslations = TableRegistry::get('ProposedTranslations');
+        $proposedTranslationsNumber = $proposedTranslations->find()->count();
+
+        $this->set(compact('categoriesNumber', 'levelsNumber', 'wordsNumber', 'proposedTranslationsNumber'));
     }
 }

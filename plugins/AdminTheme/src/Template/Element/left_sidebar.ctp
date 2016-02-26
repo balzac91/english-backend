@@ -8,7 +8,7 @@
             </li>
 
             <li class="<?= (isset($adminProposedTranslations)) ? 'active' : ''; ?>">
-                <?= $this->Html->link(__('<i class="fa fa-dashboard"></i> <span>Proposed Translations</span>'), ['plugin' => false, 'controller' => 'ProposedTranslations', 'action' => 'index', 'prefix' => 'admin'], ['escape' => false]); ?>
+                <?= $this->Html->link(__('<i class="fa fa-book"></i> <span>Proposed Translations</span>'), ['plugin' => false, 'controller' => 'ProposedTranslations', 'action' => 'index', 'prefix' => 'admin'], ['escape' => false]); ?>
             </li>
 
             <li class="treeview <?= (isset($adminMenu)) ? 'active' : ''; ?>">
