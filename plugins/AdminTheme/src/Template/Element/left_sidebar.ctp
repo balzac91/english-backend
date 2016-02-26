@@ -7,6 +7,10 @@
                 <?= $this->Html->link(__('<i class="fa fa-dashboard"></i> <span>Dashboard</span>'), ['plugin' => false, 'controller' => 'Dashboard', 'action' => 'index', 'prefix' => 'admin'], ['escape' => false]); ?>
             </li>
 
+            <li class="<?= (isset($adminProposedTranslations)) ? 'active' : ''; ?>">
+                <?= $this->Html->link(__('<i class="fa fa-dashboard"></i> <span>Proposed Translations</span>'), ['plugin' => false, 'controller' => 'ProposedTranslations', 'action' => 'index', 'prefix' => 'admin'], ['escape' => false]); ?>
+            </li>
+
             <li class="treeview <?= (isset($adminMenu)) ? 'active' : ''; ?>">
                 <?= $this->Html->link(__('<i class="fa fa-cogs"></i> <span>General</span>') . '<i class="fa fa-angle-left pull-right"></i>', ['#'], ['escape' => false]); ?>
                 <ul class="treeview-menu">
