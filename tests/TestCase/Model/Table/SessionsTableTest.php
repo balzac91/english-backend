@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\UsersTable;
+use App\Model\Table\SessionsTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\UsersTable Test Case
+ * App\Model\Table\SessionsTable Test Case
  */
-class UsersTableTest extends TestCase
+class SessionsTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\UsersTable
+     * @var \App\Model\Table\SessionsTable
      */
-    public $Users;
+    public $Sessions;
 
     /**
      * Fixtures
@@ -24,13 +24,13 @@ class UsersTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
+        'app.sessions',
         'app.users',
         'app.roles',
         'app.proposed_translations',
         'app.words',
         'app.categories',
-        'app.levels',
-        'app.sessions'
+        'app.levels'
     ];
 
     /**
@@ -41,8 +41,8 @@ class UsersTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Users') ? [] : ['className' => 'App\Model\Table\UsersTable'];
-        $this->Users = TableRegistry::get('Users', $config);
+        $config = TableRegistry::exists('Sessions') ? [] : ['className' => 'App\Model\Table\SessionsTable'];
+        $this->Sessions = TableRegistry::get('Sessions', $config);
     }
 
     /**
@@ -52,7 +52,7 @@ class UsersTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Users);
+        unset($this->Sessions);
 
         parent::tearDown();
     }
@@ -83,16 +83,6 @@ class UsersTableTest extends TestCase
      * @return void
      */
     public function testBuildRules()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test beforeSave method
-     *
-     * @return void
-     */
-    public function testBeforeSave()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

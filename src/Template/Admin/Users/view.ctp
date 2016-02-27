@@ -17,6 +17,10 @@
                             <li><?= $this->Html->link(__('New User'), ['action' => 'add']); ?></li>
                             <li><?= $this->Html->link(__('List Roles'), ['controller' => 'Roles', 'action' => 'index']); ?></li>
                             <li><?= $this->Html->link(__('New Role'), ['controller' => 'Roles', 'action' => 'add']); ?></li>
+                            <li><?= $this->Html->link(__('List Proposed Translations'), ['controller' => 'ProposedTranslations', 'action' => 'index']); ?></li>
+                            <li><?= $this->Html->link(__('New Proposed Translation'), ['controller' => 'ProposedTranslations', 'action' => 'add']); ?></li>
+                            <li><?= $this->Html->link(__('List Sessions'), ['controller' => 'Sessions', 'action' => 'index']); ?></li>
+                            <li><?= $this->Html->link(__('New Session'), ['controller' => 'Sessions', 'action' => 'add']); ?></li>
                         </ul>
                     </div>
                 </div>

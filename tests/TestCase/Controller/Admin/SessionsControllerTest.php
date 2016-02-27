@@ -1,13 +1,13 @@
 <?php
 namespace App\Test\TestCase\Controller\Admin;
 
-use App\Controller\Admin\UsersController;
+use App\Controller\Admin\SessionsController;
 use Cake\TestSuite\IntegrationTestCase;
 
 /**
- * App\Controller\Admin\UsersController Test Case
+ * App\Controller\Admin\SessionsController Test Case
  */
-class UsersControllerTest extends IntegrationTestCase
+class SessionsControllerTest extends IntegrationTestCase
 {
 
     /**
@@ -16,13 +16,13 @@ class UsersControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
+        'app.sessions',
         'app.users',
         'app.roles',
         'app.proposed_translations',
         'app.words',
         'app.categories',
-        'app.levels',
-        'app.sessions'
+        'app.levels'
     ];
 
     /**

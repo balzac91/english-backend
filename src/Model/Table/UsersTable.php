@@ -15,6 +15,7 @@ use ArrayObject;
  *
  * @property \Cake\ORM\Association\BelongsTo $Roles
  * @property \Cake\ORM\Association\HasMany $ProposedTranslations
+ * @property \Cake\ORM\Association\HasMany $Sessions
  */
 class UsersTable extends Table
 {
@@ -40,6 +41,9 @@ class UsersTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->hasMany('ProposedTranslations', [
+            'foreignKey' => 'user_id'
+        ]);
+        $this->hasMany('Sessions', [
             'foreignKey' => 'user_id'
         ]);
     }

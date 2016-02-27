@@ -15,6 +15,8 @@ use Cake\Auth\DefaultPasswordHasher;
  * @property string $password
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
+ * @property \App\Model\Entity\ProposedTranslation[] $proposed_translations
+ * @property \App\Model\Entity\Session[] $sessions
  */
 class User extends Entity
 {

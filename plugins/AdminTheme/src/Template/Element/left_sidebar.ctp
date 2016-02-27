@@ -30,6 +30,10 @@
                     <li class="<?= (isset($adminMenu['users'])) ? 'active' : ''; ?>">
                         <?= $this->Html->link(__('<span>Users</span>'), ['plugin' => false, 'controller' => 'Users', 'action' => 'index', 'prefix' => 'admin'], ['escape' => false]); ?>
                     </li>
+
+                    <li class="<?= (isset($adminMenu['sessions'])) ? 'active' : ''; ?>">
+                        <?= $this->Html->link(__('<span>Sessions</span>'), ['plugin' => false, 'controller' => 'Sessions', 'action' => 'index', 'prefix' => 'admin'], ['escape' => false]); ?>
+                    </li>
                 </ul>
             </li>
         </ul>
