@@ -50,7 +50,7 @@
 
             if (wordId && translation) {
                 $.ajax({
-                    url: '/tools/propose_translation',
+                    url: '/english/tools/propose_translation',
                     method: 'POST',
                     data: {
                         word_id: wordId,
