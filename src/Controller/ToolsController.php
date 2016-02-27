@@ -4,9 +4,17 @@ namespace App\Controller;
 use Cake\Core\Configure;
 use Cake\Network\Http\Client;
 use Cake\ORM\TableRegistry;
+use Cake\Event\Event;
 
 class ToolsController extends AppController
 {
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+
+        $this->Auth->allow(['getCategories', 'getWords', 'testWords', 'proposeTranslation']);
+    }
+
     public function getCategories()
     {
         die();

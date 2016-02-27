@@ -120,7 +120,8 @@
             $('#check').show();
             $('#next').hide();
             next(words);
-            $('#answer').val('')
+            $('#answer').val('');
+            $('#translation-box').val('');
         });
     });
 
