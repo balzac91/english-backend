@@ -103,7 +103,7 @@ class AppController extends Controller
 
     public function isAuthorized($user)
     {
-        if ($this->request->params['prefix'] === 'admin' && $user['role_id'] === Role::$ADMIN) {
+        if (isset($this->request->params['prefix']) && $this->request->params['prefix'] === 'admin' && $user['role_id'] === Role::$ADMIN) {
             return true;
         }
 

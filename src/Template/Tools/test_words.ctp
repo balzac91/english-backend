@@ -1,14 +1,32 @@
 <div style="margin: 30px;">
-    <span id="english-word"></span>&nbsp;<span id="polish-word" style="color: red;"></span>
+    <h3><span id="english-word"></span>&nbsp;<span id="polish-word" style="color: red;"></span></h3>
 
-    <input type="text" id="answer" />
-    <button type="submit" id="check">Sprawdź</button>
-    <button type="submit" id="next">Dalej</button>
+    <div class="input-group">
+        <input type="text" id="answer" class="form-control"/>
+      <span class="input-group-btn">
+        <button type="submit" id="check" class="btn btn-primary">Sprawdź</button>
+        <button type="submit" id="next" class="btn btn-primary">Dalej</button>
+      </span>
+    </div>
+
+    <br/>
+
+    <span id="word-id" style="display:none;"></span>
+
+    <div id="translation-box">
+        Zaproponuj tłumaczenie:
+        <div class="input-group">
+            <input type="text" id="translation" class="form-control"/>
+          <span class="input-group-btn">
+            <button id="send" class="btn btn-primary">Wyślij</button>
+          </span>
+        </div>
+    </div>
 
     <div id="info">Koniec</div>
 </div>
 
-<table>
+<table style="margin-left: 40px;" class="table">
     <?php $i = 1; ?>
     <?php foreach ($wordsData as $word): ?>
         <tr>
@@ -23,9 +41,26 @@
 <script>
     $(function () {
         var words = <?= json_encode($wordsData); ?>;
-
         var hintShown = false;
 
+        $('#send').on('click', function (event) {
+            var wordId = $('#word-id').text();
+            var translation = $('#translation').val();
+
+            if (wordId && translation) {
+                $.ajax({
+                    url: '/tools/propose_translation',
+                    method: 'POST',
+                    data: {
+                        word_id: wordId,
+                        english: translation
+                    },
+                    complete: function (response) {
+                        console.log(response);
+                    }
+                });
+            }
+        });
 
         $('#info').hide();
         $('#next').hide();
@@ -61,6 +96,7 @@
             }
 
             $('#polish-word').show();
+            $('#translation-box').show();
             $('#check').hide();
             $('#next').show();
         });
@@ -94,8 +130,10 @@
         } else {
             var item = words.splice(-1, 1);
 
+            $('#word-id').text(item[0].id);
             $('#english-word').text(item[0].english);
             $('#polish-word').hide().text(item[0].polish);
+            $('#translation-box').hide();
         }
     };
 </script>

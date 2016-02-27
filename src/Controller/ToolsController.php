@@ -65,7 +65,7 @@ class ToolsController extends AppController
 
                 foreach ($wordsData[4] as $key => $item) {
                     if ($item && $wordsData[5][$key]) {
-                        $levelId = ($wordsData[1][$key]) ? $levelsData[$wordsData[1][$key]]: null;
+                        $levelId = ($wordsData[1][$key]) ? $levelsData[$wordsData[1][$key]] : null;
                         $polish = $wordsData[5][$key];
 
                         $count = $wordsTable->find('all')
@@ -90,7 +90,10 @@ class ToolsController extends AppController
         }
     }
 
-    public function testWords() {
+    public function testWords()
+    {
+        $this->viewBuilder()->layout('login');
+
         $wordsTable = TableRegistry::get('Words');
         $words = $wordsTable->find()
             ->where(['category_id' => 8])
@@ -100,11 +103,29 @@ class ToolsController extends AppController
         $wordsData = array();
         foreach ($words as $word) {
             $wordsData[] = array(
+                'id' => $word->id,
                 'polish' => $word->polish,
                 'english' => $word->english
             );
         }
 
         $this->set('wordsData', $wordsData);
+    }
+
+    public function proposeTranslation()
+    {
+        $this->autoRender = false;
+        $proposedTranslationsTable = TableRegistry::get('ProposedTranslations');
+        $proposedTranslations = $proposedTranslationsTable->newEntity();
+        $proposedTranslations->polish = null;
+        $proposedTranslations->english = $this->request->data['english'];
+        $proposedTranslations->user_id = 2;
+        $proposedTranslations->word_id = $this->request->data['word_id'];
+        $proposedTranslationsTable->save($proposedTranslations);
+    }
+
+    public function isAuthorized($user)
+    {
+        return true;
     }
 }
