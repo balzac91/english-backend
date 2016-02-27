@@ -14,6 +14,7 @@
     <span id="word-id" style="display:none;"></span>
 
     <div id="translation-box">
+        <span id="message" style="display: none; color: red;">Wysłano</span>
         Zaproponuj tłumaczenie:
         <div class="input-group">
             <input type="text" id="translation" class="form-control"/>
@@ -56,7 +57,7 @@
                         english: translation
                     },
                     complete: function (response) {
-                        console.log(response);
+                        $('#message').show();
                     }
                 });
             }
@@ -135,6 +136,7 @@
             $('#english-word').text(item[0].english);
             $('#polish-word').hide().text(item[0].polish);
             $('#translation-box').hide();
+            $('#message').hide();
         }
     };
 </script>
