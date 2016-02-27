@@ -30,7 +30,7 @@ class WordsController extends AppController
 
         $wordsTable = TableRegistry::get('words');
         $words = $wordsTable->find()
-            ->select(['id', 'level_id', 'polish', 'english','category_id'])
+            ->select(['id', 'level_id', 'polish', 'english'])
             ->where(['category_id' => $this->request->data['categoryId']])
             ->order('RAND()')
             ->limit(10);
