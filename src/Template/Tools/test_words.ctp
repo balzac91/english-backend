@@ -106,23 +106,22 @@
         $(document).on('keydown', function (event) {
             if (event.keyCode == 13) {
                 if (hintShown) {
-                    hintShown = false;
                     $('#next').trigger('click');
                 } else {
-                    hintShown = false;
+
                     $('#check').trigger('click');
                 }
-
             }
         });
 
         $('#next').on('click', function (event) {
+            hintShown = false;
             event.preventDefault();
             $('#check').show();
             $('#next').hide();
             next(words);
             $('#answer').val('');
-            $('#translation-box').val('');
+            $('#translation').val('');
         });
     });
 
@@ -131,7 +130,6 @@
             $('#info').show();
         } else {
             var item = words.splice(-1, 1);
-
             $('#word-id').text(item[0].id);
             $('#english-word').text(item[0].english);
             $('#polish-word').hide().text(item[0].polish);
