@@ -34,9 +34,7 @@
             </div>
         </a>
     </div>
-</div>
 
-<div class="row">
     <div class="col-md-4 col-sm-6 col-xs-12">
         <a href="<?= $this->Url->build(['plugin' => false, 'controller' => 'ProposedTranslations', 'action' => 'index', 'prefix' => 'admin']); ?>" class="dashboard-panel-link">
             <div class="info-box">
