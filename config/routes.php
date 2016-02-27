@@ -101,6 +101,24 @@ Router::scope('/api', function ($routes) {
             ]
         ]
     ]);
+
+    $routes->resources('Categories', [
+        'map' => [
+            'get' => [
+                'action' => 'get',
+                'method' => 'POST'
+            ]
+        ]
+    ]);
+
+    $routes->resources('Words', [
+        'map' => [
+            'get' => [
+                'action' => 'get',
+                'method' => 'POST'
+            ]
+        ]
+    ]);
 });
 
 /**
