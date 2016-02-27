@@ -17,6 +17,11 @@ namespace App\Controller;
 use Cake\Controller\Controller;
 use Cake\Event\Event;
 use App\Model\Entity\Role;
+use Cake\Network\Exception\BadRequestException;
+use Cake\Network\Exception\InternalErrorException;
+use Cake\Network\Exception\UnauthorizedException;
+use Cake\ORM\TableRegistry;
+use Cake\I18n\Time;
 
 /**
  * Application Controller
@@ -99,6 +104,34 @@ class AppController extends Controller
         }
 
         $this->viewBuilder()->theme('AdminTheme');
+    }
+
+    public function apiAuth()
+    {
+        if (!isset($this->request->data['sessionId'])) {
+            throw new BadRequestException();
+        }
+
+        $sessionsTable = TableRegistry::get('Sessions');
+
+        $session = $sessionsTable->find()
+            ->where(['id' => $this->request->data['sessionId']])
+            ->where(['valid_to >=' => new Time()])
+            ->first();
+
+        if (!$session) {
+            throw new UnauthorizedException();
+        }
+
+        $currentDateTime = new Time();
+        $currentDateTime->addHours(1);
+
+        $session->valid_to = $currentDateTime;
+        if (!$sessionsTable->save($session)) {
+            throw new InternalErrorException();
+        }
+
+        return $session->id;
     }
 
     public function isAuthorized($user)

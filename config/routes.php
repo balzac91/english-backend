@@ -77,6 +77,32 @@ Router::prefix('admin', function ($routes) {
     $routes->fallbacks('DashedRoute');
 });
 
+Router::scope('/api', function ($routes) {
+    $routes->extensions(['json']);
+
+    $routes->resources('Authorization', [
+        'map' => [
+            'login' => [
+                'action' => 'login',
+                'method' => 'POST'
+            ],
+            'logout' => [
+                'action' => 'logout',
+                'method' => 'POST'
+            ]
+        ]
+    ]);
+
+    $routes->resources('Users', [
+        'map' => [
+            'profile' => [
+                'action' => 'profile',
+                'method' => 'POST'
+            ]
+        ]
+    ]);
+});
+
 /**
  * Load all plugin routes.  See the Plugin documentation on
  * how to customize the loading of plugin routes.
