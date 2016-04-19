@@ -24,3 +24,39 @@ the setup traffic lights.
 
 Read and edit `config/app.php` and setup the 'Datasources' and any other
 configuration relevant for your application.
+
+## API documentation
+
+### Authorization
+`POST /authorization/login.json`
+##### Params
+* email
+* password
+
+`POST /authorization/logout.json`
+##### Params
+* sessionId
+
+- - - -
+### Users
+`POST /users/profile.json`
+##### Params
+* sessionId
+
+- - - -
+### Categories
+`POST /categories/get.json`
+##### Params
+* sessionId
+
+- - - -
+### Words
+`POST /words/get.json`
+##### Params
+* sessionId
+* categoryId
+
+`POST /words/getAll.json`
+##### Params
+* sessionId
+* categoryId

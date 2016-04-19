@@ -20,7 +20,7 @@ class CategoriesController extends AppController
         $categoriesTable = TableRegistry::get('categories');
         $categories = $categoriesTable->find()
             ->select(['id', 'name'])
-            ->orderAsc('id');
+            ->orderAsc('name');
 
         $this->set([
             'data' => [

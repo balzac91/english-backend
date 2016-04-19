@@ -116,6 +116,10 @@ Router::scope('/api', function ($routes) {
             'get' => [
                 'action' => 'get',
                 'method' => 'POST'
+            ],
+            'getAll' => [
+                'action' => 'getAll',
+                'method' => 'POST'
             ]
         ]
     ]);

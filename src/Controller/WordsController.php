@@ -11,7 +11,7 @@ class WordsController extends AppController
     {
         parent::beforeFilter($event);
 
-        $this->Auth->allow(['get']);
+        $this->Auth->allow(['get', 'getAll']);
     }
 
     public function get()
@@ -34,6 +34,34 @@ class WordsController extends AppController
             ->where(['category_id' => $this->request->data['categoryId']])
             ->order('RAND()')
             ->limit(10);
+
+        $this->set([
+            'data' => [
+                'words' => $words
+            ],
+            '_serialize' => ['data']
+        ]);
+    }
+
+    public function getAll()
+    {
+        $this->apiAuth();
+
+        if (!isset($this->request->data['categoryId'])) {
+            throw new BadRequestException();
+        }
+
+        $categoriesTable = TableRegistry::get('categories');
+
+        if (!$categoriesTable->exists(['id' => $this->request->data['categoryId']])) {
+            throw new BadRequestException();
+        }
+
+        $wordsTable = TableRegistry::get('words');
+        $words = $wordsTable->find()
+            ->select(['id', 'level_id', 'polish', 'english'])
+            ->where(['category_id' => $this->request->data['categoryId']])
+            ->orderAsc('english');
 
         $this->set([
             'data' => [
