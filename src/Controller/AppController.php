@@ -113,7 +113,6 @@ class AppController extends Controller
         }
 
         $sessionsTable = TableRegistry::get('Sessions');
-
         $session = $sessionsTable->find()
             ->where(['id' => $this->request->data['sessionId']])
             ->where(['valid_to >=' => new Time()])

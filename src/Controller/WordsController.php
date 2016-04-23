@@ -11,7 +11,7 @@ class WordsController extends AppController
     {
         parent::beforeFilter($event);
 
-        $this->Auth->allow(['get', 'getAll']);
+        $this->Auth->allow(['get', 'getAll', 'proposeTranslation']);
     }
 
     public function get()
@@ -67,6 +67,31 @@ class WordsController extends AppController
             'data' => [
                 'words' => $words
             ],
+            '_serialize' => ['data']
+        ]);
+    }
+
+    public function proposeTranslation()
+    {
+        $this->apiAuth();
+
+        if (!isset($this->request->data['english']) || !isset($this->request->data['wordId'])) {
+            throw new BadRequestException();
+        }
+
+        $sessionsTable = TableRegistry::get('Sessions');
+        $session = $sessionsTable->get($this->request->data['sessionId']);
+
+        $proposedTranslationsTable = TableRegistry::get('ProposedTranslations');
+        $proposedTranslations = $proposedTranslationsTable->newEntity();
+        $proposedTranslations->polish = null;
+        $proposedTranslations->english = $this->request->data['english'];
+        $proposedTranslations->user_id = $session->user_id;
+        $proposedTranslations->word_id = $this->request->data['wordId'];
+        $proposedTranslationsTable->save($proposedTranslations);
+
+        $this->set([
+            'data' => [],
             '_serialize' => ['data']
         ]);
     }

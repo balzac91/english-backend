@@ -120,6 +120,10 @@ Router::scope('/api', function ($routes) {
             'getAll' => [
                 'action' => 'getAll',
                 'method' => 'POST'
+            ],
+            'proposeTranslation' => [
+                'action' => 'proposeTranslation',
+                'method' => 'POST'
             ]
         ]
     ]);
