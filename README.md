@@ -60,3 +60,9 @@ configuration relevant for your application.
 ##### Params
 * sessionId
 * categoryId
+
+`POST /words/proposeTranslation.json`
+##### Params
+* sessionId
+* wordId
+* english
