@@ -65,4 +65,4 @@ configuration relevant for your application.
 ##### Params
 * sessionId
 * wordId
-* english
+* polish

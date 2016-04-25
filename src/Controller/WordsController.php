@@ -84,8 +84,8 @@ class WordsController extends AppController
 
         $proposedTranslationsTable = TableRegistry::get('ProposedTranslations');
         $proposedTranslations = $proposedTranslationsTable->newEntity();
-        $proposedTranslations->polish = null;
-        $proposedTranslations->english = $this->request->data['english'];
+        $proposedTranslations->english = null;
+        $proposedTranslations->polish = $this->request->data['polish'];
         $proposedTranslations->user_id = $session->user_id;
         $proposedTranslations->word_id = $this->request->data['wordId'];
         $proposedTranslationsTable->save($proposedTranslations);
