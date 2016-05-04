@@ -11,6 +11,10 @@
                 <?= $this->Html->link(__('<i class="fa fa-book"></i> <span>Proposed Translations</span>'), ['plugin' => false, 'controller' => 'ProposedTranslations', 'action' => 'index', 'prefix' => 'admin'], ['escape' => false]); ?>
             </li>
 
+            <li class="<?= (isset($adminAnswers)) ? 'active' : ''; ?>">
+                <?= $this->Html->link(__('<i class="fa fa-book"></i> <span>Answers</span>'), ['plugin' => false, 'controller' => 'Answers', 'action' => 'index', 'prefix' => 'admin'], ['escape' => false]); ?>
+            </li>
+
             <li class="treeview <?= (isset($adminMenu)) ? 'active' : ''; ?>">
                 <?= $this->Html->link(__('<i class="fa fa-cogs"></i> <span>General</span>') . '<i class="fa fa-angle-left pull-right"></i>', ['#'], ['escape' => false]); ?>
                 <ul class="treeview-menu">
