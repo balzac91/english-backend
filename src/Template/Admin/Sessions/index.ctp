@@ -35,7 +35,7 @@
                     <?php foreach ($sessions as $session): ?>
                         <tr>
                             <td class="text-center"><?= h($session->id) ?></td>
-                            <td class="text-center"><?= $session->has('user') ? $this->Html->link($session->user->id, ['controller' => 'Users', 'action' => 'view', $session->user->id]) : '' ?></td>
+                            <td class="text-center"><?= $session->has('user') ? $this->Html->link($session->user->email, ['controller' => 'Users', 'action' => 'view', $session->user->id]) : '' ?></td>
                             <td class="text-center"><?= h($session->valid_to) ?></td>
                             <td class="text-center"><?= h($session->created) ?></td>
                             <td class="text-center"><?= h($session->modified) ?></td>

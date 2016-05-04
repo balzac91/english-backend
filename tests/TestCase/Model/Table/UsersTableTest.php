@@ -30,6 +30,7 @@ class UsersTableTest extends TestCase
         'app.words',
         'app.categories',
         'app.levels',
+        'app.answers',
         'app.sessions'
     ];
 

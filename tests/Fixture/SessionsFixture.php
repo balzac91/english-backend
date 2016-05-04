@@ -39,11 +39,11 @@ class SessionsFixture extends TestFixture
      */
     public $records = [
         [
-            'id' => '7ec9163e-dce7-47fc-82ad-6fbef5acbe0e',
+            'id' => 'd1623e8a-bdd4-4200-9872-009cbaa6935b',
             'user_id' => 1,
-            'valid_to' => '2016-02-27 13:04:56',
-            'created' => '2016-02-27 13:04:56',
-            'modified' => '2016-02-27 13:04:56'
+            'valid_to' => '2016-05-04 14:06:23',
+            'created' => '2016-05-04 14:06:23',
+            'modified' => '2016-05-04 14:06:23'
         ],
     ];
 }

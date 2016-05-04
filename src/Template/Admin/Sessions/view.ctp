@@ -30,7 +30,7 @@
                     </tr>
                     <tr>
                         <th><?= __('User'); ?></th>
-                        <td><?= $session->has('user') ? $this->Html->link($session->user->id, ['controller' => 'Users', 'action' => 'view', $session->user->id]) : ''; ?></td>
+                        <td><?= $session->has('user') ? $this->Html->link($session->user->email, ['controller' => 'Users', 'action' => 'view', $session->user->id]) : ''; ?></td>
                     </tr>
                     <tr>
                         <th><?= __('Valid To'); ?></th>

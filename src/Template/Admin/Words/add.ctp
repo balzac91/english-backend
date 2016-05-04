@@ -16,6 +16,8 @@
                             <li><?= $this->Html->link(__('New Category'), ['controller' => 'Categories', 'action' => 'add']); ?></li>
                             <li><?= $this->Html->link(__('List Levels'), ['controller' => 'Levels', 'action' => 'index']); ?></li>
                             <li><?= $this->Html->link(__('New Level'), ['controller' => 'Levels', 'action' => 'add']); ?></li>
+                            <li><?= $this->Html->link(__('List Proposed Translations'), ['controller' => 'ProposedTranslations', 'action' => 'index']); ?></li>
+                            <li><?= $this->Html->link(__('New Proposed Translation'), ['controller' => 'ProposedTranslations', 'action' => 'add']); ?></li>
                         </ul>
                     </div>
                 </div>

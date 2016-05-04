@@ -29,7 +29,9 @@ class RolesTableTest extends TestCase
         'app.proposed_translations',
         'app.words',
         'app.categories',
-        'app.levels'
+        'app.levels',
+        'app.answers',
+        'app.sessions'
     ];
 
     /**

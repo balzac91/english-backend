@@ -22,6 +22,7 @@ class UsersControllerTest extends IntegrationTestCase
         'app.words',
         'app.categories',
         'app.levels',
+        'app.answers',
         'app.sessions'
     ];
 

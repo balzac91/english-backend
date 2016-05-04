@@ -12,6 +12,7 @@ use Cake\Validation\Validator;
  *
  * @property \Cake\ORM\Association\BelongsTo $Categories
  * @property \Cake\ORM\Association\BelongsTo $Levels
+ * @property \Cake\ORM\Association\HasMany $Answers
  * @property \Cake\ORM\Association\HasMany $ProposedTranslations
  */
 class WordsTable extends Table
@@ -39,6 +40,9 @@ class WordsTable extends Table
         ]);
         $this->belongsTo('Levels', [
             'foreignKey' => 'level_id'
+        ]);
+        $this->hasMany('Answers', [
+            'foreignKey' => 'word_id'
         ]);
         $this->hasMany('ProposedTranslations', [
             'foreignKey' => 'word_id'
