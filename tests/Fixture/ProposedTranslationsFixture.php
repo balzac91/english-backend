@@ -46,8 +46,8 @@ class ProposedTranslationsFixture extends TestFixture
             'user_id' => 1,
             'polish' => 'Lorem ipsum dolor sit amet',
             'english' => 'Lorem ipsum dolor sit amet',
-            'created' => '2016-02-26 15:02:46',
-            'modified' => '2016-02-26 15:02:46'
+            'created' => '2016-05-04 14:15:00',
+            'modified' => '2016-05-04 14:15:00'
         ],
     ];
 }

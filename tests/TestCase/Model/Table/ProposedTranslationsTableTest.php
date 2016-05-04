@@ -28,8 +28,10 @@ class ProposedTranslationsTableTest extends TestCase
         'app.words',
         'app.categories',
         'app.levels',
+        'app.answers',
         'app.users',
-        'app.roles'
+        'app.roles',
+        'app.sessions'
     ];
 
     /**

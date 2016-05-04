@@ -40,7 +40,7 @@
                         <tr>
                             <td class="text-center"><?= $this->Number->format($proposedTranslation->id) ?></td>
                             <td class="text-center"><?= $proposedTranslation->has('word') ? $this->Html->link($proposedTranslation->word->id, ['controller' => 'Words', 'action' => 'view', $proposedTranslation->word->id]) : '' ?></td>
-                            <td class="text-center"><?= $proposedTranslation->has('user') ? $this->Html->link($proposedTranslation->user->id, ['controller' => 'Users', 'action' => 'view', $proposedTranslation->user->id]) : '' ?></td>
+                            <td class="text-center"><?= $proposedTranslation->has('user') ? $this->Html->link($proposedTranslation->user->email, ['controller' => 'Users', 'action' => 'view', $proposedTranslation->user->id]) : '' ?></td>
                             <td class="text-center"><?= h($proposedTranslation->polish) ?></td>
                             <td class="text-center"><?= h($proposedTranslation->english) ?></td>
                             <td class="text-center"><?= h($proposedTranslation->created) ?></td>

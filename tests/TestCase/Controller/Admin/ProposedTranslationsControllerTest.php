@@ -20,8 +20,10 @@ class ProposedTranslationsControllerTest extends IntegrationTestCase
         'app.words',
         'app.categories',
         'app.levels',
+        'app.answers',
         'app.users',
-        'app.roles'
+        'app.roles',
+        'app.sessions'
     ];
 
     /**

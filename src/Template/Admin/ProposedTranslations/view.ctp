@@ -36,7 +36,7 @@
                     </tr>
                     <tr>
                         <th><?= __('User'); ?></th>
-                        <td><?= $proposedTranslation->has('user') ? $this->Html->link($proposedTranslation->user->id, ['controller' => 'Users', 'action' => 'view', $proposedTranslation->user->id]) : ''; ?></td>
+                        <td><?= $proposedTranslation->has('user') ? $this->Html->link($proposedTranslation->user->email, ['controller' => 'Users', 'action' => 'view', $proposedTranslation->user->id]) : ''; ?></td>
                     </tr>
                     <tr>
                         <th><?= __('Polish'); ?></th>
