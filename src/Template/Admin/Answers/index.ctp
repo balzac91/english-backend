@@ -16,6 +16,8 @@
                             <li><?= $this->Html->link(__('New Word'), ['controller' => 'Words', 'action' => 'add']); ?></li>
                             <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']); ?></li>
                             <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']); ?></li>
+                            <li><?= $this->Html->link(__('List Translation Types'), ['controller' => 'TranslationTypes', 'action' => 'index']); ?></li>
+                            <li><?= $this->Html->link(__('New Translation Type'), ['controller' => 'TranslationTypes', 'action' => 'add']); ?></li>
                         </ul>
                     </div>
                 </div>
@@ -28,7 +30,7 @@
                         <th class="text-center"><?= $this->Paginator->sort('id'); ?></th>
                         <th class="text-center"><?= $this->Paginator->sort('word_id'); ?></th>
                         <th class="text-center"><?= $this->Paginator->sort('user_id'); ?></th>
-                        <th class="text-center"><?= $this->Paginator->sort('type'); ?></th>
+                        <th class="text-center"><?= $this->Paginator->sort('translation_type_id'); ?></th>
                         <th class="text-center"><?= $this->Paginator->sort('correct'); ?></th>
                         <th class="text-center"><?= $this->Paginator->sort('created'); ?></th>
                         <th class="text-center"><?= $this->Paginator->sort('modified'); ?></th>
@@ -40,8 +42,8 @@
                         <tr>
                             <td class="text-center"><?= $this->Number->format($answer->id) ?></td>
                             <td class="text-center"><?= $answer->has('word') ? $this->Html->link($answer->word->id, ['controller' => 'Words', 'action' => 'view', $answer->word->id]) : '' ?></td>
-                            <td class="text-center"><?= $answer->has('user') ? $this->Html->link($answer->user->id, ['controller' => 'Users', 'action' => 'view', $answer->user->id]) : '' ?></td>
-                            <td class="text-center"><?= $this->Number->format($answer->type) ?></td>
+                            <td class="text-center"><?= $answer->has('user') ? $this->Html->link($answer->user->email, ['controller' => 'Users', 'action' => 'view', $answer->user->id]) : '' ?></td>
+                            <td class="text-center"><?= $answer->has('translation_type') ? $this->Html->link($answer->translation_type->name, ['controller' => 'TranslationTypes', 'action' => 'view', $answer->translation_type->id]) : '' ?></td>
                             <td class="text-center"><?= $answer->correct ? __('<i class="fa fa-check text-green"></i>') : __('<i class="fa fa-times text-red"></i>'); ?></td>
                             <td class="text-center"><?= h($answer->created) ?></td>
                             <td class="text-center"><?= h($answer->modified) ?></td>

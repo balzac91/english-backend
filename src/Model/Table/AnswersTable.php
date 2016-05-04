@@ -12,6 +12,7 @@ use Cake\Validation\Validator;
  *
  * @property \Cake\ORM\Association\BelongsTo $Words
  * @property \Cake\ORM\Association\BelongsTo $Users
+ * @property \Cake\ORM\Association\BelongsTo $TranslationTypes
  */
 class AnswersTable extends Table
 {
@@ -40,6 +41,10 @@ class AnswersTable extends Table
             'foreignKey' => 'user_id',
             'joinType' => 'INNER'
         ]);
+        $this->belongsTo('TranslationTypes', [
+            'foreignKey' => 'translation_type_id',
+            'joinType' => 'INNER'
+        ]);
     }
 
     /**
@@ -53,11 +58,6 @@ class AnswersTable extends Table
         $validator
             ->integer('id')
             ->allowEmpty('id', 'create');
-
-        $validator
-            ->integer('type')
-            ->requirePresence('type', 'create')
-            ->notEmpty('type');
 
         $validator
             ->boolean('correct')
@@ -78,6 +78,7 @@ class AnswersTable extends Table
     {
         $rules->add($rules->existsIn(['word_id'], 'Words'));
         $rules->add($rules->existsIn(['user_id'], 'Users'));
+        $rules->add($rules->existsIn(['translation_type_id'], 'TranslationTypes'));
         return $rules;
     }
 }

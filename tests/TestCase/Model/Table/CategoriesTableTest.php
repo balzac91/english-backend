@@ -31,7 +31,8 @@ class CategoriesTableTest extends TestCase
         'app.users',
         'app.roles',
         'app.proposed_translations',
-        'app.sessions'
+        'app.sessions',
+        'app.translation_types'
     ];
 
     /**

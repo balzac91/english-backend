@@ -16,6 +16,8 @@
                             <li><?= $this->Html->link(__('New Word'), ['controller' => 'Words', 'action' => 'add']); ?></li>
                             <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']); ?></li>
                             <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']); ?></li>
+                            <li><?= $this->Html->link(__('List Translation Types'), ['controller' => 'TranslationTypes', 'action' => 'index']); ?></li>
+                            <li><?= $this->Html->link(__('New Translation Type'), ['controller' => 'TranslationTypes', 'action' => 'add']); ?></li>
                         </ul>
                     </div>
                 </div>
@@ -32,7 +34,7 @@
                 </div>
 
                 <div class="form-group">
-                    <?= $this->Form->input('type', ['class' => 'form-control']); ?>
+                    <?= $this->Form->input('translation_type_id', ['options' => $translationTypes, 'class' => 'form-control']); ?>
                 </div>
 
                 <div class="form-group iCheck-input">

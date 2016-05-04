@@ -23,7 +23,8 @@ class CategoriesControllerTest extends IntegrationTestCase
         'app.users',
         'app.roles',
         'app.proposed_translations',
-        'app.sessions'
+        'app.sessions',
+        'app.translation_types'
     ];
 
     /**

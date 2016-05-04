@@ -19,6 +19,8 @@
                             <li><?= $this->Html->link(__('New Word'), ['controller' => 'Words', 'action' => 'add']); ?></li>
                             <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']); ?></li>
                             <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']); ?></li>
+                            <li><?= $this->Html->link(__('List Translation Types'), ['controller' => 'TranslationTypes', 'action' => 'index']); ?></li>
+                            <li><?= $this->Html->link(__('New Translation Type'), ['controller' => 'TranslationTypes', 'action' => 'add']); ?></li>
                         </ul>
                     </div>
                 </div>
@@ -31,16 +33,16 @@
                         <td><?= $this->Number->format($answer->id); ?></td>
                     </tr>
                     <tr>
-                        <th><?= __('Type'); ?></th>
-                        <td><?= $this->Number->format($answer->type); ?></td>
-                    </tr>
-                    <tr>
                         <th><?= __('Word'); ?></th>
                         <td><?= $answer->has('word') ? $this->Html->link($answer->word->id, ['controller' => 'Words', 'action' => 'view', $answer->word->id]) : ''; ?></td>
                     </tr>
                     <tr>
                         <th><?= __('User'); ?></th>
-                        <td><?= $answer->has('user') ? $this->Html->link($answer->user->id, ['controller' => 'Users', 'action' => 'view', $answer->user->id]) : ''; ?></td>
+                        <td><?= $answer->has('user') ? $this->Html->link($answer->user->email, ['controller' => 'Users', 'action' => 'view', $answer->user->id]) : ''; ?></td>
+                    </tr>
+                    <tr>
+                        <th><?= __('Translation Type'); ?></th>
+                        <td><?= $answer->has('translation_type') ? $this->Html->link($answer->translation_type->name, ['controller' => 'TranslationTypes', 'action' => 'view', $answer->translation_type->id]) : ''; ?></td>
                     </tr>
                     <tr>
                         <th><?= __('Created'); ?></th>

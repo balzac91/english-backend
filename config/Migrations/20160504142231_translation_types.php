@@ -2,7 +2,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class Answers extends AbstractMigration
+class TranslationTypes extends AbstractMigration
 {
     /**
      * Change Method.
@@ -27,13 +27,8 @@ class Answers extends AbstractMigration
      */
     public function change()
     {
-        $answers = $this->table('answers');
-        $answers->addColumn('word_id', 'integer')
-            ->addColumn('user_id', 'integer')
-            ->addColumn('translation_type_id', 'integer')
-            ->addColumn('correct', 'boolean')
-            ->addColumn('created', 'datetime')
-            ->addColumn('modified', 'datetime')
+        $translationTypes = $this->table('translation_types');
+        $translationTypes->addColumn('name', 'string', array('limit' => 255))
             ->create();
     }
 }

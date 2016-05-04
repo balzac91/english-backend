@@ -4,20 +4,13 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Answer Entity.
+ * TranslationType Entity.
  *
  * @property int $id
- * @property int $word_id
- * @property \App\Model\Entity\Word $word
- * @property int $user_id
- * @property \App\Model\Entity\User $user
- * @property int $translation_type_id
- * @property \App\Model\Entity\TranslationType $translation_type
- * @property bool $correct
- * @property \Cake\I18n\Time $created
- * @property \Cake\I18n\Time $modified
+ * @property string $name
+ * @property \App\Model\Entity\Answer[] $answers
  */
-class Answer extends Entity
+class TranslationType extends Entity
 {
 
     /**

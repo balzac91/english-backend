@@ -27,7 +27,7 @@ class AnswersController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Words', 'Users']
+            'contain' => ['Words', 'Users', 'TranslationTypes']
         ];
         $answers = $this->paginate($this->Answers);
 
@@ -45,7 +45,7 @@ class AnswersController extends AppController
     public function view($id = null)
     {
         $answer = $this->Answers->get($id, [
-            'contain' => ['Words', 'Users']
+            'contain' => ['Words', 'Users', 'TranslationTypes']
         ]);
 
         $this->set('answer', $answer);
@@ -71,7 +71,8 @@ class AnswersController extends AppController
         }
         $words = $this->Answers->Words->find('list', ['limit' => 200]);
         $users = $this->Answers->Users->find('list', ['limit' => 200]);
-        $this->set(compact('answer', 'words', 'users'));
+        $translationTypes = $this->Answers->TranslationTypes->find('list', ['limit' => 200]);
+        $this->set(compact('answer', 'words', 'users', 'translationTypes'));
         $this->set('_serialize', ['answer']);
     }
 
@@ -98,7 +99,8 @@ class AnswersController extends AppController
         }
         $words = $this->Answers->Words->find('list', ['limit' => 200]);
         $users = $this->Answers->Users->find('list', ['limit' => 200]);
-        $this->set(compact('answer', 'words', 'users'));
+        $translationTypes = $this->Answers->TranslationTypes->find('list', ['limit' => 200]);
+        $this->set(compact('answer', 'words', 'users', 'translationTypes'));
         $this->set('_serialize', ['answer']);
     }
 

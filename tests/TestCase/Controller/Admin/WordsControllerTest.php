@@ -19,10 +19,12 @@ class WordsControllerTest extends IntegrationTestCase
         'app.words',
         'app.categories',
         'app.levels',
-        'app.proposed_translations',
+        'app.answers',
         'app.users',
         'app.roles',
-        'app.sessions'
+        'app.proposed_translations',
+        'app.sessions',
+        'app.translation_types'
     ];
 
     /**
