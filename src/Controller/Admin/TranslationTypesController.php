@@ -2,6 +2,7 @@
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * TranslationTypes Controller
@@ -10,6 +11,13 @@ use App\Controller\AppController;
  */
 class TranslationTypesController extends AppController
 {
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+
+        $adminMenu['translationTypes'] = true;
+        $this->set('adminMenu', $adminMenu);
+    }
 
     /**
      * Index method

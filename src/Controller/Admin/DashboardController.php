@@ -38,6 +38,9 @@ class DashboardController extends AppController
         $proposedTranslations = TableRegistry::get('ProposedTranslations');
         $proposedTranslationsNumber = $proposedTranslations->find()->count();
 
-        $this->set(compact('categoriesNumber', 'levelsNumber', 'wordsNumber', 'proposedTranslationsNumber'));
+        $answers = TableRegistry::get('Answers');
+        $answersNumber = $answers->find()->count();
+
+        $this->set(compact('categoriesNumber', 'levelsNumber', 'wordsNumber', 'proposedTranslationsNumber', 'answersNumber'));
     }
 }

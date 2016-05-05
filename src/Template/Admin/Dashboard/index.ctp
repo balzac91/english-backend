@@ -46,4 +46,16 @@
             </div>
         </a>
     </div>
+
+    <div class="col-md-4 col-sm-6 col-xs-12">
+        <a href="<?= $this->Url->build(['plugin' => false, 'controller' => 'Answers', 'action' => 'index', 'prefix' => 'admin']); ?>" class="dashboard-panel-link">
+            <div class="info-box">
+                <span class="info-box-icon bg-maroon"><i class="fa fa-language"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text"><?= __('Answers'); ?></span>
+                    <span class="info-box-number"><?= $this->Number->format($answersNumber); ?></span>
+                </div>
+            </div>
+        </a>
+    </div>
 </div>

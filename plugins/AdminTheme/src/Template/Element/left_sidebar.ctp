@@ -12,13 +12,12 @@
             </li>
 
             <li class="<?= (isset($adminAnswers)) ? 'active' : ''; ?>">
-                <?= $this->Html->link(__('<i class="fa fa-book"></i> <span>Answers</span>'), ['plugin' => false, 'controller' => 'Answers', 'action' => 'index', 'prefix' => 'admin'], ['escape' => false]); ?>
+                <?= $this->Html->link(__('<i class="fa fa-language"></i> <span>Answers</span>'), ['plugin' => false, 'controller' => 'Answers', 'action' => 'index', 'prefix' => 'admin'], ['escape' => false]); ?>
             </li>
 
             <li class="treeview <?= (isset($adminMenu)) ? 'active' : ''; ?>">
                 <?= $this->Html->link(__('<i class="fa fa-cogs"></i> <span>General</span>') . '<i class="fa fa-angle-left pull-right"></i>', ['#'], ['escape' => false]); ?>
                 <ul class="treeview-menu">
-
                     <li class="<?= (isset($adminMenu['levels'])) ? 'active' : ''; ?>">
                         <?= $this->Html->link(__('<span>Levels</span>'), ['plugin' => false, 'controller' => 'Levels', 'action' => 'index', 'prefix' => 'admin'], ['escape' => false]); ?>
                     </li>
@@ -34,7 +33,9 @@
                     <li class="<?= (isset($adminMenu['users'])) ? 'active' : ''; ?>">
                         <?= $this->Html->link(__('<span>Users</span>'), ['plugin' => false, 'controller' => 'Users', 'action' => 'index', 'prefix' => 'admin'], ['escape' => false]); ?>
                     </li>
-
+                    <li class="<?= (isset($adminMenu['translationTypes'])) ? 'active' : ''; ?>">
+                        <?= $this->Html->link(__('<span>Translation Types</span>'), ['plugin' => false, 'controller' => 'TranslationTypes', 'action' => 'index', 'prefix' => 'admin'], ['escape' => false]); ?>
+                    </li>
                     <li class="<?= (isset($adminMenu['sessions'])) ? 'active' : ''; ?>">
                         <?= $this->Html->link(__('<span>Sessions</span>'), ['plugin' => false, 'controller' => 'Sessions', 'action' => 'index', 'prefix' => 'admin'], ['escape' => false]); ?>
                     </li>
