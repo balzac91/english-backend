@@ -60,6 +60,10 @@ class ProposedTranslationsTable extends Table
         $validator
             ->allowEmpty('english');
 
+        $validator
+            ->requirePresence('word_id', 'create')
+            ->requirePresence('user_id', 'create');
+
         return $validator;
     }
 

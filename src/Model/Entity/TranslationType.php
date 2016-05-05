@@ -26,4 +26,7 @@ class TranslationType extends Entity
         '*' => true,
         'id' => false,
     ];
+
+    public static $ENG_TO_POL = 1;
+    public static $POL_TO_ENG = 2;
 }
