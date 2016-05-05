@@ -66,3 +66,8 @@ configuration relevant for your application.
 * sessionId
 * wordId
 * polish
+
+`POST /words/answer.json`
+##### Params
+* sessionId
+* answers
